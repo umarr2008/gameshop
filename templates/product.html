@@ -1,0 +1,26 @@
+{%extends 'base.html'%} {%block content%}
+  <!-- product section start -->
+  <div class="product_section layout_padding">
+    <div class="container">
+      <div class="product_text">Bizning <span style="color: #5ca0e9;">mahsulotlar</span></div>
+      <p class="long_text">O‘quvchi sahifaning tartibiga qarab chalg‘ishi aniq bo‘lgan eski fakt.</p>
+      <div class="product_section_2">
+        <div class="row">
+          {% for game in games %}
+          <div class="col-md-6">
+            <div class="image_2"><img src="{{ game.image.url }}" alt="{{ game.title }}"></div>
+            <div class="price_text">Narxi: $ <span style="color: #3a3a38;">{{ game.price }}</span></div>
+            <h1 class="game_text">{{ game.title }}</h1>
+            <p class="long_text">{{ game.description }}</p>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="see_main">
+        <div class="see_bt"><a href="#">Ko‘proq ko‘rish</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- mahsulotlar bo'limi tugadi -->
+  {%endblock%}

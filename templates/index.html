@@ -1,0 +1,158 @@
+
+ 
+{% extends 'base.html' %}
+ 
+
+{% block content %}
+
+ <!-- banner section start -->
+  <div class="banner_section layout_padding">
+    <div class="container">
+      <div id="my_slider" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="row">
+              <div class="col-md-6">
+                <h1 class="video_text">Video o'yinlar</h1>
+                <h1 class="controller_text">Boshqaruvchi</h1>
+                <p class="banner_text">[O'yin nomi] ga xush kelibsiz! Bu, ajoyib manzaralar va hayajonli sinovlar bilan to'la, unutilmas sayohatga olib boradigan epik sarguzasht o'yini. Boy va batafsil dunyoda, qadimiy yovuzlikdan o'z yurtini qutqarish uchun kurashayotgan jasur qahramon sifatida o'ynaysiz.</p>
+                <div class="shop_bt"><a href="#">Hoziroq xarid qilish</a></div>
+              </div>
+              <div class="col-md-6">
+                <div class="image_1"><img src="/static/images/img-1.png"></div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-md-6">
+                <h1 class="video_text">Video o'yinlar</h1>
+                <h1 class="controller_text">Boshqaruvchi</h1>
+                <p class="banner_text">[O'yin nomi] - bu kuchli ruhlar va sirli yurtlarga sayohat qilishga taklif qiladigan, ham aqlni, ham tezlikni sinovdan o'tkazadigan o'yin. Yaratilgan dunyo har bir burchagida yangi kashfiyotlarni va xavf-xatarlarni taklif etadi. Sizning vazifangiz — qadimiy sirlarni ochish va bu yerdagi dushmanlardan himoya qilish.</p>
+                <div class="shop_bt"><a href="#">Hoziroq xarid qilish</a></div>
+              </div>
+              <div class="col-md-6">
+                <div class="image_1"><img src="/static/images/img-1.png"></div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-md-6">
+                <h1 class="video_text">Video o'yinlar</h1>
+                <h1 class="controller_text">Boshqaruvchi</h1>
+                <p class="banner_text">Lorem Ipsum'ning ko'plab o'zgarishlari mavjud, ammo ularning aksariyati ba'zi
+                  shakllarda o'zgargan, kulgili so'zlar yoki tasodifiy so'zlar bilan, ular hatto biroz ham ishonarli
+                  ko'rinmaydi</p>
+                <div class="shop_bt"><a href="#">Hoziroq xarid qilish</a></div>
+              </div>
+              <div class="col-md-6">
+                <div class="image_1"><img src="/static/images/img-1.png"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#my_slider" role="button" data-slide="prev">
+          <i class="fa fa-angle-left"></i>
+        </a>
+        <a class="carousel-control-next" href="#my_slider" role="button" data-slide="next">
+          <i class="fa fa-angle-right"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- banner section end -->
+  <!-- about section start -->
+  <div class="about_section layout_padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="image_2"><img src="/static/images/img-2.png"></div>
+        </div>
+        <div class="col-md-6">
+          <h1 class="about_text">HAQIMIZDA</h1>
+          <p class="lorem_text">xbox - bu kuchli ruhlar va sirli yurtlarga sayohat qilishga taklif qiladigan, ham aqlni, ham tezlikni sinovdan o'tkazadigan o'yin. Yaratilgan dunyo har bir burchagida yangi kashfiyotlarni va xavf-xatarlarni taklif etadi. Sizning vazifangiz — qadimiy sirlarni ochish va bu yerdagi dushmanlardan himoya qilish.</p>
+          <div class="shop_bt_2"><a href="#">Hozir sotib oling</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- about section end -->
+  <!-- product section start -->
+  <div class="product_section layout_padding">
+    <div class="container">
+      <div class="product_text">Bizning <span style="color: #5ca0e9;">mahsulotlar</span></div>
+      <p class="long_text">O‘quvchi sahifaning tartibiga qarab chalg‘ishi aniq bo‘lgan eski fakt.</p>
+      <div class="product_section_2">
+        <div class="row">
+          {% for game in games %}
+          <div class="col-md-6">
+            <div class="image_2"><img src="{{ game.image.url }}" alt="{{ game.title }}"></div>
+            <div class="price_text">Narxi: $ <span style="color: #3a3a38;">{{ game.price }}</span></div>
+            <h1 class="game_text">{{ game.title }}</h1>
+            <p class="long_text">{{ game.description }}</p>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="see_main">
+        <div class="see_bt"><a href="#">Ko‘proq ko‘rish</a></div>
+      </div>
+    </div>
+  </div>
+  <div class="see_main">
+    <div class="see_bt"><a href="#">Ko'proq ko'rish</a></div>
+  </div>
+  </div>
+  </div>
+
+  <!-- product section end -->
+  <!-- video section start -->
+  <div class="video_section layout_padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h1 class="video_text_2">3D video o'yin</h1>
+          <h1 class="controller_text_2">Masofaviy boshqaruv</h1>
+          <p class="banner_text_2">[O'yin nomi] – bu sizni ko'plab sirli dunyolar va xavfli missiyalar orqali olib boradigan, dinamik janglar va o'zgaruvchan hikoya bilan boyitilgan interaktiv sarguzasht. Har bir burchakda yangi qiyinchiliklar, sirlar va qarorlar kutmoqda, va bu o'yinda har bir tanlovingiz dunyoda katta ta'sir ko'rsatadi.</p>
+          <div class="shop_bt"><a href="#">Hozir sotib oling</a></div>
+        </div>
+        <div class="col-md-6">
+          <div class="image_4"><img src="/static/images/img-4.png"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- video section end -->
+  <!-- testimonial section start -->
+  <div class="testimonial_section layout_padding">
+    <div class="container">
+      <h1 class="testimonial_text">Sharhlar</h1>
+      <p class="ipsum_text">[O'yin nomi] – bu yuqori darajadagi aksiyon va sarguzashtni birlashtirgan o'yin, sizni g'ayrioddiy dunyolarga olib boradi. Har bir joyda yangi imkoniyatlar va xavf-xatarlar kutmoqda. O'yinda o'zingizning kuchingizni topish, yovuzlikka qarshi kurashish va o'zingizni sinab ko'rish uchun barcha qulayliklarga ega bo'lasiz.</p>
+      <div class="testimonial_section_2">
+        <div class="box_main">
+          <div class="quote_icon"><img src="/static/images/quote-icon.png"></div>
+          <p class="dolor_text"> [O'yin nomi] – bu yuqori darajadagi aksiyon va sarguzashtni birlashtirgan o'yin, sizni g'ayrioddiy dunyolarga olib boradi. Har bir joyda yangi imkoniyatlar va xavf-xatarlar kutmoqda. O'yinda o'zingizning kuchingizni topish, yovuzlikka qarshi kurashish va o'zingizni sinab ko'rish uchun barcha qulayliklarga ega bo'lasiz. </p>
+          <div class="client_main">
+            <div class="client_left">
+              <div class="images_5"><img src="/static/images/img-5.png"></div>
+            </div>
+            <div class="client_right">
+              <h1 class="sandy_text">Sandy Delex</h1>
+              <p class="sandy_text_1">Reprehenderit</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="see_main">
+        <div class="see_bt"><a href="#">Ko'proq ko'rish</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- testimonial section end -->
+  
+{% endblock %}
