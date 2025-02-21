@@ -66,7 +66,13 @@
             <a class="nav-link" href="#"><img src="/static/images/search-icon.png"></a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="#">SIGN IN</a>
+            <form id="loginForm" method="POST" action="{% url 'login' %}">
+              {% csrf_token %}
+              <input type="text" name="username" placeholder="Enter username" required>
+              <input type="password" name="password" placeholder="Enter password" required>
+              <a href="#" id="signInLink">Sign In</a>  <!-- Ссылка вместо кнопки -->
+          </form>
+          
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">REGISTER</a>
@@ -119,7 +125,7 @@
               </div>
             </div>
           </div>
-    
+    o
           <div class="social_icon">
             <ul>
               <li><a href="#"><img src="/static/images/fb-icon.png"></a></li>
@@ -158,7 +164,10 @@
             closeEffect: "none"
           });
         });
-    
+        document.getElementById("signInLink").addEventListener("click", function(event) {
+              event.preventDefault();  // Отменяем стандартное действие ссылки
+              document.getElementById("loginForm").submit();  // Отправляем форму
+          });
       </script>
 
 
